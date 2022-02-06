@@ -10,7 +10,7 @@
 
 #### 🛒 Deploy on Vercel
 
-- [Production](https://)
+- [Production](https://fake-user-list.vercel.app/)
 
 #### 🧑‍💻 Technologies
 
@@ -61,11 +61,12 @@ npm cypress
 #### 📱 Preview Responsive
 
 <p align="center">
-<video src='.github/assets/fake-user-responsive.mp4' width=180/> 
+<video src='https://user-images.githubusercontent.com/38052474/152664560-d8f47d64-7443-4949-b23c-462e3f86d0a7.mp4' width=180/> 
 </p>
+
 
 #### 💻 Preview PC
 
 <p align="center">
-<video src='.github/assets/fake-user-list.mp4' width=180/>
+<video src='https://user-images.githubusercontent.com/38052474/152664563-41624724-e3f2-4d72-8178-334dc2236d42.mp4' width=180/>
 </p>
