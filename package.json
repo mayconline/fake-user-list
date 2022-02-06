@@ -1,0 +1,17 @@
+{
+  "name": "form-web-components",
+  "version": "1.0.0",
+  "description": "form created with web components",
+  "main": "./src/pages/index.html",
+  "scripts": {
+    "build": "npm run clean && tsc && npm run copy",
+    "dev": "npm run build && tsc -w",
+    "copy": "cp -r ./src/*.html ./dist && cp -r ./src/styles ./dist && cp -r ./src/public ./dist",
+    "clean": "rm -rf ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00c8b3" />
+    <meta
+      name="description"
+      content="Fake User List - Using Web Components with Typescript"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="manifest" href="./public/manifest.json" />
+
+    <script
+      src="./components/form/formContainer.js"
+      type="module"
+      defer
+    ></script>
+    <script src="./components/form/formInput.js" type="module" defer></script>
+    <script src="./components/button/button.js" type="module" defer></script>
+    <script src="./components/header/header.js" type="module" defer></script>
+
+    <title>Form</title>
+  </head>
+  <body>
+    <header-nav></header-nav>
+    <form-container>
+      <form-input
+        id="name"
+        type="text"
+        placeholder="Nome completo (sem abreviações)"
+      ></form-input>
+      <form-input id="cpf" type="text" placeholder="CPF"></form-input>
+      <form-input id="phone" type="tel" placeholder="Telefone"></form-input>
+      <form-input id="email" type="email" placeholder="Email"></form-input>
+      <action-button id="form-button">Cadastrar</action-button>
+    </form-container>
+  </body>
+</html>
