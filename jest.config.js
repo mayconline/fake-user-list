@@ -1,6 +1,6 @@
 module.exports = {
   clearMocks: true,
-  collectCoverage: false,
+  collectCoverage: true,
   coverageDirectory: 'coverage',
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['**/**/**/*.spec.ts'],
