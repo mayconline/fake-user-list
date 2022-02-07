@@ -10,15 +10,15 @@
 
 #### 🛒 Deploy on Vercel
 
-- [Production](https://)
+- [Production](https://fake-user-list.vercel.app/)
 
 #### 🧑‍💻 Technologies
 
 - [Web Components](https://developer.mozilla.org/pt-BR/docs/Web/Web_Components)
 - [Typescript](https://www.typescriptlang.org/docs/)
 - [Mock-User-API](https://private-847f5-ivangenesis.apiary-mock.com/users)
-<!-- - [Jest](https://jestjs.io/docs/en/getting-started)
-- [Cypress](https://docs.cypress.io/guides/overview/why-cypress) -->
+- [Jest](https://jestjs.io/docs/en/getting-started)
+<!-- - [Cypress](https://docs.cypress.io/guides/overview/why-cypress) -->
 
 #### ⚙️ Getting Started
 
@@ -49,14 +49,14 @@ Open [http://localhost:5500/](http://localhost:5500/) with your browser to see t
 For run jest tests:
 
 ```bash
-npm test
+npm run test
 ```
 
-For run cypress tests:
+<!-- For run cypress tests:
 
 ```bash
-npm cypress
-```
+npm run cypress
+``` -->
 
 #### 📱 Preview Responsive
 
