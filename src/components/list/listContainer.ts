@@ -48,6 +48,7 @@ export default class ListContainer extends HTMLElement {
     await this.fetchUsersList();
     this.listItems();
     this.handleDeleteItemList();
+    this.handleEditItemList();
     this.handleDisplayEmptyList();
   }
 
@@ -115,14 +116,27 @@ export default class ListContainer extends HTMLElement {
   }
 
   handleDeleteItemList() {
-    const buttons = this.shadowRoot?.querySelectorAll('#delete-button');
+    const deleteButtons = this.shadowRoot?.querySelectorAll('#delete-button');
 
-    buttons?.forEach((button) => {
+    deleteButtons?.forEach((button) => {
       const currentButton = button?.parentNode as HTMLElement;
       const id = currentButton?.getAttribute('id') as string;
 
       button.addEventListener('click', () => {
         this.deleteStorageList(id);
+      });
+    });
+  }
+
+  handleEditItemList() {
+    const editButtoms = this.shadowRoot?.querySelectorAll('#edit-button');
+
+    editButtoms?.forEach((button) => {
+      const currentButton = button?.parentNode as HTMLElement;
+      const id = currentButton?.getAttribute('id') as string;
+
+      button.addEventListener('click', () => {
+        window.location.assign(`./form.html?id=${id}`);
       });
     });
   }

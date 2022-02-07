@@ -60,6 +60,7 @@ export default class FormInput extends HTMLElement {
     input.type = this.getAttribute('type') || '';
     input.name = this.getAttribute('id') || '';
     input.placeholder = this.getAttribute('placeholder') || '';
+    input.value = this.getAttribute('value') || '';
   }
 
   validInput() {
