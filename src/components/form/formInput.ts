@@ -103,6 +103,14 @@ export default class FormInput extends HTMLElement {
   handleAddMaskInput() {
     const input = this.shadowRoot?.querySelector('.input') as HTMLInputElement;
 
+    if (!!input.value) {
+      if (input?.name == 'cpf') {
+        input.value = formatCPF(input.value);
+      } else if (input?.name == 'phone') {
+        input.value = formatPhone(input.value);
+      }
+    }
+
     input.addEventListener('keypress', (event: Event) => {
       const currentEvent = event?.currentTarget as HTMLInputElement;
 
