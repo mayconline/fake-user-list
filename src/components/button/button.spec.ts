@@ -19,7 +19,7 @@ describe('button', () => {
     screen.getByText('Cadastrar');
 
     const button = element.shadowRoot?.querySelector(
-      '.button'
+      '.button',
     ) as HTMLButtonElement;
 
     expect(button).toBeVisible();
@@ -38,7 +38,7 @@ describe('button', () => {
     screen.getByText('Cadastrar');
 
     const button = element.shadowRoot?.querySelector(
-      '.button'
+      '.button',
     ) as HTMLButtonElement;
 
     expect(button).toBeVisible();
@@ -58,13 +58,13 @@ describe('button', () => {
     screen.getByText('Cadastrar');
 
     const button = element.shadowRoot?.querySelector(
-      '.button'
+      '.button',
     ) as HTMLButtonElement;
 
     userEvent.click(button);
 
     const loading = element.shadowRoot?.querySelector(
-      '.loading'
+      '.loading',
     ) as HTMLSpanElement;
 
     expect(loading.style.display).toBe('inline-block');

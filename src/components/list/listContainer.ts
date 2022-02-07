@@ -72,7 +72,7 @@ export default class ListContainer extends HTMLElement {
 
   listItems() {
     const container = this.shadowRoot?.querySelector(
-      '.list-container'
+      '.list-container',
     ) as HTMLElement;
 
     this.dataList.forEach((listItem, index) => {
@@ -102,10 +102,10 @@ export default class ListContainer extends HTMLElement {
   }
 
   deleteStorageList(id: string) {
-    const updatedDataList = this.dataList.filter((list) => list.id !== id);
+    const updatedDataList = this.dataList.filter(list => list.id !== id);
 
     const container = this.shadowRoot?.querySelector(
-      '.list-container'
+      '.list-container',
     ) as HTMLElement;
     const removedItem = this.shadowRoot?.querySelector(`#${id}`) as HTMLElement;
 
@@ -118,7 +118,7 @@ export default class ListContainer extends HTMLElement {
   handleDeleteItemList() {
     const deleteButtons = this.shadowRoot?.querySelectorAll('#delete-button');
 
-    deleteButtons?.forEach((button) => {
+    deleteButtons?.forEach(button => {
       const currentButton = button?.parentNode as HTMLElement;
       const id = currentButton?.getAttribute('id') as string;
 
@@ -131,7 +131,7 @@ export default class ListContainer extends HTMLElement {
   handleEditItemList() {
     const editButtoms = this.shadowRoot?.querySelectorAll('#edit-button');
 
-    editButtoms?.forEach((button) => {
+    editButtoms?.forEach(button => {
       const currentButton = button?.parentNode as HTMLElement;
       const id = currentButton?.getAttribute('id') as string;
 
@@ -144,7 +144,7 @@ export default class ListContainer extends HTMLElement {
   handleDisplayEmptyList() {
     this.addEventListener('click', () => {
       const hasCreatedImgContainer = Boolean(
-        this.shadowRoot?.querySelector('.empty-container')
+        this.shadowRoot?.querySelector('.empty-container'),
       );
 
       if (this.dataList.length == 0 && !hasCreatedImgContainer) {

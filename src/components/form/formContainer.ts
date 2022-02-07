@@ -50,7 +50,7 @@ export default class FormContainer extends HTMLElement {
     if (!!idParams) {
       const storeList: User[] = getStorageList();
 
-      const currentItem = storeList.find((list) => list.id == idParams);
+      const currentItem = storeList.find(list => list.id == idParams);
 
       if (currentItem) {
         const slotName = document.querySelector('#name') as HTMLElement;
@@ -87,11 +87,11 @@ export default class FormContainer extends HTMLElement {
         )?.value,
         cpf: getRawValue(
           (slotCPF?.shadowRoot?.querySelector('.input') as HTMLInputElement)
-            ?.value
+            ?.value,
         ),
         phone: getRawValue(
           (slotPhone?.shadowRoot?.querySelector('.input') as HTMLInputElement)
-            ?.value
+            ?.value,
         ),
         email: (
           slotEmail?.shadowRoot?.querySelector('.input') as HTMLInputElement
@@ -104,10 +104,10 @@ export default class FormContainer extends HTMLElement {
         button.setAttribute('loading', 'true');
 
         if (!!idParams) {
-          const existsId = storeList.some((list) => list.id == idParams);
+          const existsId = storeList.some(list => list.id == idParams);
 
           if (existsId) {
-            const updatedList = storeList.map((list) => {
+            const updatedList = storeList.map(list => {
               return list.id == idParams ? stateForm : list;
             });
 

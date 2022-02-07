@@ -42,12 +42,12 @@ export const getErrorMessage = (name: string, value: string) => {
 };
 
 export const hasSomeInvalidInput = (stateform: User) => {
-  const hasSomeError = Object.entries(stateform).map((state) => {
+  const hasSomeError = Object.entries(stateform).map(state => {
     const { hasError } = getErrorMessage(state[0], state[1]);
     return hasError;
   });
 
-  const hasError = hasSomeError.some((error) => Boolean(error));
+  const hasError = hasSomeError.some(error => Boolean(error));
 
   return {
     hasError,

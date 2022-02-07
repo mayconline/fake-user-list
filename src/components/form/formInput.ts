@@ -66,7 +66,7 @@ export default class FormInput extends HTMLElement {
   validInput() {
     const input = this.shadowRoot?.querySelector('.input') as HTMLInputElement;
     const errorMessage = this.shadowRoot?.querySelector(
-      '.input-invalid'
+      '.input-invalid',
     ) as HTMLSpanElement;
 
     input.addEventListener('change', (event: Event) => {
@@ -74,7 +74,7 @@ export default class FormInput extends HTMLElement {
 
       const { hasError, message } = getErrorMessage(
         currentEvent?.name,
-        currentEvent.value
+        currentEvent.value,
       );
 
       if (hasError) {
@@ -89,7 +89,7 @@ export default class FormInput extends HTMLElement {
   displayErrorMessage(
     span: HTMLSpanElement,
     input: HTMLInputElement,
-    show: boolean
+    show: boolean,
   ) {
     if (show) {
       span.style.display = 'block';

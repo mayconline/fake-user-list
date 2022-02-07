@@ -12,7 +12,7 @@ describe('formInput', () => {
     document.body.appendChild(element);
 
     const input = element.shadowRoot?.querySelector(
-      '.input'
+      '.input',
     ) as HTMLInputElement;
 
     expect(input).toHaveAttribute('name', 'name');
@@ -33,7 +33,7 @@ describe('formInput', () => {
     document.body.appendChild(element);
 
     const input = element.shadowRoot?.querySelector(
-      '.input'
+      '.input',
     ) as HTMLInputElement;
 
     expect(input).toHaveAttribute('name', 'cpf');
@@ -54,7 +54,7 @@ describe('formInput', () => {
     document.body.appendChild(element);
 
     const input = element.shadowRoot?.querySelector(
-      '.input'
+      '.input',
     ) as HTMLInputElement;
 
     expect(input).toHaveAttribute('name', 'phone');

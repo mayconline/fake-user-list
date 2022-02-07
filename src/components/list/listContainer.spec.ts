@@ -22,7 +22,7 @@ describe('ListContainer', () => {
     expect(setStorageList).toHaveBeenNthCalledWith(1, STORAGE_MOCK);
 
     const container = element.shadowRoot?.querySelector(
-      '.list-container'
+      '.list-container',
     ) as HTMLElement;
 
     const listItems = container.querySelectorAll('list-item');
@@ -49,13 +49,13 @@ describe('ListContainer', () => {
     expect(setStorageList).toHaveBeenNthCalledWith(1, STORAGE_MOCK);
 
     const container = element.shadowRoot?.querySelector(
-      '.list-container'
+      '.list-container',
     ) as HTMLElement;
 
     const listItems = container.querySelectorAll('list-item');
 
     const deleteButton = listItems[0].querySelector(
-      '#delete-button'
+      '#delete-button',
     ) as HTMLButtonElement;
 
     userEvent.click(deleteButton);
@@ -63,7 +63,7 @@ describe('ListContainer', () => {
     await waitFor(() => expect(setStorageList).toHaveBeenCalledTimes(2));
     expect(setStorageList).toHaveBeenNthCalledWith(
       2,
-      STORAGE_MOCK.filter((list) => list.id !== 'list-0')
+      STORAGE_MOCK.filter(list => list.id !== 'list-0'),
     );
   });
 
@@ -76,20 +76,20 @@ describe('ListContainer', () => {
     expect(setStorageList).toHaveBeenNthCalledWith(1, STORAGE_MOCK);
 
     const container = element.shadowRoot?.querySelector(
-      '.list-container'
+      '.list-container',
     ) as HTMLElement;
 
     const listItems = container.querySelectorAll('list-item');
 
-    listItems.forEach((item) =>
-      userEvent.click(item.querySelector('#delete-button') as HTMLElement)
+    listItems.forEach(item =>
+      userEvent.click(item.querySelector('#delete-button') as HTMLElement),
     );
 
     await waitFor(() => expect(setStorageList).toHaveBeenCalledTimes(4));
     expect(setStorageList).toHaveBeenNthCalledWith(4, []);
 
     const emptyContainer = element.shadowRoot?.querySelector(
-      '.empty-container'
+      '.empty-container',
     ) as HTMLElement;
 
     const emptySVG = emptyContainer.querySelector('img');
@@ -128,5 +128,5 @@ const STORAGE_MOCK = MOCK_USER_LIST.map((list, index) => ({
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: jest.fn().mockImplementation(() => Promise.resolve(MOCK_USER_LIST)),
-  })
+  }),
 ) as jest.Mock;

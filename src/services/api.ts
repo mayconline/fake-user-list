@@ -5,7 +5,7 @@ export const handlefetchApi = async (route: string) => {
 
   try {
     const result = await fetch(
-      `https://private-847f5-ivangenesis.apiary-mock.com/${route}`
+      `https://private-847f5-ivangenesis.apiary-mock.com/${route}`,
     );
 
     if (!!result) {

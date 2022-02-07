@@ -64,7 +64,7 @@ export default class ListItem extends HTMLElement {
     const email = this.getAttribute('email') || '';
 
     const listData = this.shadowRoot?.querySelector(
-      '.list-data'
+      '.list-data',
     ) as HTMLElement;
 
     listData.innerHTML = `

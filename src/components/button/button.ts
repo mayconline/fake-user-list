@@ -80,7 +80,7 @@ export default class Button extends HTMLElement {
   mountButton() {
     const kindButton = this.getAttribute('id');
     const button = this.shadowRoot?.querySelector(
-      '.button'
+      '.button',
     ) as HTMLButtonElement;
 
     switch (kindButton) {
@@ -178,10 +178,10 @@ export default class Button extends HTMLElement {
     this.addEventListener('click', () => {
       if (this.getAttribute('loading')) {
         const loading = this.shadowRoot?.querySelector(
-          '.loading'
+          '.loading',
         ) as HTMLSpanElement;
         const text = this.shadowRoot?.querySelector(
-          '.content'
+          '.content',
         ) as HTMLSpanElement;
         const icon = this.shadowRoot?.querySelector('svg') as SVGElement;
 

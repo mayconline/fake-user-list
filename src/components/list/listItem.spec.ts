@@ -12,7 +12,7 @@ describe('ListItem', () => {
     document.body.appendChild(element);
 
     const listData = element.shadowRoot?.querySelector(
-      '.list-data'
+      '.list-data',
     ) as HTMLElement;
 
     expect(listData).toHaveTextContent('Nome: Panqueca Silva');
