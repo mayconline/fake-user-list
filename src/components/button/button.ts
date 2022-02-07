@@ -65,7 +65,7 @@ buttonTemplate.innerHTML = `
   </button>   
 `;
 
-class Button extends HTMLElement {
+export default class Button extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });

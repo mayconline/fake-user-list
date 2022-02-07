@@ -1,3 +1,4 @@
+import { handlefetchApi } from '../../services/api.js';
 import { User } from '../../types';
 import { setStorageList, getStorageList } from '../../utils/storage.js';
 
@@ -32,7 +33,7 @@ listContainerTemplate.innerHTML = `
   <main class="list-container"></main>
 `;
 
-class ListContainer extends HTMLElement {
+export default class ListContainer extends HTMLElement {
   dataList: User[];
 
   constructor() {
@@ -56,12 +57,9 @@ class ListContainer extends HTMLElement {
     if (!!storeList.length) {
       this.dataList = storeList;
     } else {
-      const result = await fetch(
-        'https://private-847f5-ivangenesis.apiary-mock.com/users'
-      );
-      const resultJson = (await result.json()) as User[];
+      const resultJson = await handlefetchApi('users');
 
-      const dataList = resultJson.map((data, index) => ({
+      const dataList = resultJson?.map((data, index) => ({
         ...data,
         id: `list-${index}`,
       }));
