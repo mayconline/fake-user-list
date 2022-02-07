@@ -28,7 +28,7 @@ formContainerTemplate.innerHTML = `
   <main>   
 `;
 
-class FormContainer extends HTMLElement {
+export default class FormContainer extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });

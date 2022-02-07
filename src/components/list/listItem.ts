@@ -1,3 +1,5 @@
+import { formatCPF, formatPhone } from '../../utils/format.js';
+
 const listItemTemplate = document.createElement('template');
 listItemTemplate.innerHTML = `
   <style>
@@ -44,7 +46,7 @@ listItemTemplate.innerHTML = `
 
 `;
 
-class ListItem extends HTMLElement {
+export default class ListItem extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
@@ -56,10 +58,10 @@ class ListItem extends HTMLElement {
   }
 
   mountItem() {
-    const name = this.getAttribute('name');
-    const cpf = this.getAttribute('cpf');
-    const phone = this.getAttribute('phone');
-    const email = this.getAttribute('email');
+    const name = this.getAttribute('name') || '';
+    const cpf = this.getAttribute('cpf') || '';
+    const phone = this.getAttribute('phone') || '';
+    const email = this.getAttribute('email') || '';
 
     const listData = this.shadowRoot?.querySelector(
       '.list-data'
@@ -67,8 +69,8 @@ class ListItem extends HTMLElement {
 
     listData.innerHTML = `
       <p><strong>Nome:</strong> ${name}</p>
-      <p><strong>CPF:</strong> ${cpf}</p>
-      <p><strong>Telefone:</strong> ${phone}</p>
+      <p><strong>CPF:</strong> ${formatCPF(cpf)}</p>
+      <p><strong>Telefone:</strong> ${formatPhone(phone)}</p>
       <p><strong>E-mail:</strong> ${email}</p>
     `;
   }
