@@ -1,4 +1,4 @@
-import { formatCPF, formatPhone, getRawValue } from '../../utils/format.js';
+import { formatCPF, formatPhone } from '../../utils/format.js';
 import { getErrorMessage } from '../../utils/valid.js';
 
 const formInputTemplate = document.createElement('template');
@@ -42,16 +42,15 @@ formInputTemplate.innerHTML = `
   </div>
 `;
 
-class FormInput extends HTMLElement {
+export default class FormInput extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot?.appendChild(formInputTemplate.content.cloneNode(true));
-
-    this.mountInput();
   }
 
   connectedCallback() {
+    this.mountInput();
     this.validInput();
     this.handleAddMaskInput();
   }
