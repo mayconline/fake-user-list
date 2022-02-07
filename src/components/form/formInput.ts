@@ -34,6 +34,20 @@ formInputTemplate.innerHTML = `
       color: var(--red-light);
       display:none;
     }
+
+    input:-webkit-autofill {
+      border: none;
+      border-bottom:2px inset;
+      -webkit-box-shadow: 0 0 0px 1000px var(--gray) inset;
+      -webkit-text-fill-color: var(--gray-light);
+    }
+
+    input:-webkit-autofill:focus {
+      border: none;
+      border-bottom: 2px solid var(--gray-dark);
+      -webkit-box-shadow: 0 0 0px 1000px var(--gray) inset;
+      -webkit-text-fill-color: var(--gray-dark);
+    }  
   </style>
  
   <div class="input-container">
